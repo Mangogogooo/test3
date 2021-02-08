@@ -3,7 +3,7 @@
  */
 var board = [];
 var score = 0;
-var hasCollide = []; // ¼ì²âµ±Ç°¸ñÊÇ·ñÒÑ·¢ÉúÅö×²Éú³ÉÐÂµÄÊý
+var hasCollide = []; // ï¿½ï¿½âµ±Ç°ï¿½ï¿½ï¿½Ç·ï¿½ï¿½Ñ·ï¿½ï¿½ï¿½ï¿½ï¿½×²ï¿½ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½
 
 var startx=0;
 var starty=0;
@@ -33,9 +33,9 @@ function prepareForMobile(){
 }
 
 function newGame(){
-//   ³õÊ¼»¯ÆåÅÌ
+//   ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     init();
-//    Ëæ»úÉú³ÉÊý×Ö
+//    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     generateOneNumber();
     generateOneNumber();
 }
@@ -62,7 +62,7 @@ function init(){
     updateScore(score);
 }
 
-// ¸ù¾ÝÊý×éäÖÈ¾ÆåÅÌ
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¾ï¿½ï¿½ï¿½ï¿½
 function updateBoardView(){
 
     $(".number-cell").remove();
@@ -86,8 +86,8 @@ function updateBoardView(){
                     'height': cellSideLength,
                     'left': getLeft(i,j),
                     'top': getTop(i,j),
-                    'background-color': getNumberBackgroundColor(board[i][j]),
-                    'color': getNumberColor(board[i][j])
+                    'background-color': getNumberBackgroundColor(board[i][j])
+                 //   'color': getNumberColor(board[i][j])
                 }).text(board[i][j]);
             }
 
@@ -109,7 +109,7 @@ function generateOneNumber(){
     if(nospace(board))
         return false;
 
-    //Ëæ»úÒ»¸öÎ»ÖÃ
+    //ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Î»ï¿½ï¿½
     var randx = parseInt(Math.floor(Math.random() * 4));
     var randy = parseInt(Math.floor(Math.random() * 4));
     while(true){
@@ -119,10 +119,10 @@ function generateOneNumber(){
         randy = parseInt(Math.floor(Math.random() * 4));
     }
 
-    //Ëæ»úÒ»¸öÊý×Ö
+    //ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     var randNumber = Math.random() < 0.5?2:4;
 
-    //ÔÚËæ»úµÄÎ»ÖÃÏÔÊ¾Ëæ»úÊý×Ö
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     board[randx][randy]=randNumber;
     showNumberWithAnimation(randx,randy,randNumber);
 
